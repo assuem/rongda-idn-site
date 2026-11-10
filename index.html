@@ -1,326 +1,346 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="id">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#6E0F0F">
-<title>PT Rongda Internasional · 印尼宣传册效果预览</title>
+<title>PT Rongda Internasional — Instalasi Proteksi Kebakaran Jabodetabek</title>
+<meta name="description" content="PT Rongda Internasional Instalasi dan Konstruksi — instalasi sistem proteksi kebakaran dan suplai peralatan untuk gedung industri & komersial di Jabodetabek. Anak perusahaan Jiangxi Rongda Group.">
 <style>
 :root{
   --deep:#6E0F0F; --darkred:#8A1414; --primary:#C00000;
-  --pink:#FFD9D0; --ink:#2B1B1B; --line:#E4DAD2; --mut:#E8C7C2;
-  --stage-bg1:#5C0D0D; --stage-bg2:#8A1414;
-  --radius:12px;
-  --flip-ms:460ms;
-  --ease:cubic-bezier(.4,0,.2,1);
+  --pink:#FFD9D0; --ink:#2B1B1B; --body:#4A3A38; --warm:#F8F4EF; --line:#EADFD8;
+  --mut:#8C8C8C;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
-  font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
-  color:#fff;background:linear-gradient(135deg,var(--stage-bg1),var(--stage-bg2));
-  min-height:100dvh;-webkit-font-smoothing:antialiased;
+  font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;
 }
-img{display:block}
-button{cursor:pointer;font:inherit;color:inherit;background:none;border:0}
-button:focus-visible,a:focus-visible{outline:2px solid var(--pink);outline-offset:3px;border-radius:6px}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--primary);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+.cn{color:var(--mut);font-size:.86em}
+section{padding:clamp(44px,7vw,84px) 0}
+.kicker{
+  display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.16em;color:var(--primary);
+  border-bottom:3px solid var(--primary);padding-bottom:6px;margin-bottom:18px;text-transform:uppercase;
+}
+h2{font-size:clamp(24px,3.4vw,32px);line-height:1.25;letter-spacing:.01em}
+h2 .cn{display:block;font-size:14px;font-weight:400;margin-top:8px;letter-spacing:.04em}
+.lead{font-size:clamp(16px,2vw,18px);color:var(--body);max-width:70ch}
 
 /* ---------- 顶栏 ---------- */
 .topbar{
-  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
-  padding:14px clamp(16px,4vw,40px);
+  position:sticky;top:0;z-index:10;
+  background:rgba(110,15,15,.96);backdrop-filter:blur(6px);
   border-bottom:1px solid rgba(255,255,255,.14);
 }
-.brand{display:flex;flex-direction:column;line-height:1.25;min-width:0}
-.brand .en{font-weight:700;letter-spacing:.14em;font-size:15px;white-space:nowrap}
-.brand .cn{font-size:12px;color:var(--mut)}
-.topbar .spacer{flex:1}
-.counter{
-  font-variant-numeric:tabular-nums;font-size:14px;letter-spacing:.12em;color:var(--pink);
-  border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:5px 14px;white-space:nowrap;
+.topbar .wrap{display:flex;align-items:center;gap:18px;padding-top:10px;padding-bottom:10px}
+.brand{line-height:1.3;min-width:0}
+.brand .en{font-weight:700;font-size:14.5px;letter-spacing:.1em;white-space:nowrap;color:#fff}
+.brand .cn2{font-size:11.5px;color:var(--pink);white-space:nowrap}
+.navlinks{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.navlinks::-webkit-scrollbar{display:none}
+.navlinks a{
+  font-size:13.5px;color:#F3D9D5;text-decoration:none;white-space:nowrap;
+  padding:8px 12px;border-radius:999px;transition:background .2s,color .2s;
 }
-.viewtoggle{display:flex;border:1px solid rgba(255,255,255,.28);border-radius:999px;overflow:hidden}
-.viewtoggle button{
-  padding:5px 14px;font-size:13px;color:var(--mut);transition:background .2s var(--ease),color .2s var(--ease);
-}
-.viewtoggle button[aria-pressed="true"]{background:#fff;color:var(--deep);font-weight:600}
-.viewtoggle button:not([aria-pressed="true"]):hover{color:#fff}
+.navlinks a:hover{background:rgba(255,255,255,.14);color:#fff}
 
-/* ---------- 翻页舞台 ---------- */
-.stage{
-  display:flex;align-items:center;justify-content:center;
-  padding:clamp(12px,3vh,32px) 16px;
-  min-height:calc(100dvh - 64px - 108px);
+/* ---------- HERO ---------- */
+.hero{
+  background:linear-gradient(150deg,var(--deep),var(--darkred) 70%);
+  color:#fff;padding:clamp(56px,9vw,110px) 0 clamp(48px,7vw,88px);
 }
-.flip{
-  position:relative;height:min(74dvh,760px);aspect-ratio:794/1123;
-  perspective:2000px;flex:0 0 auto;
+.hero .eyebrow{font-size:13px;letter-spacing:.22em;color:var(--pink);font-weight:600;margin-bottom:22px}
+.hero h1{font-size:clamp(30px,5vw,52px);line-height:1.14;max-width:20ch}
+.hero .positioning{
+  margin-top:26px;font-size:clamp(17px,2.4vw,21px);font-weight:600;max-width:34ch;line-height:1.5;
 }
-.sheet{
-  position:absolute;inset:0;border-radius:4px;overflow:hidden;
-  box-shadow:0 24px 70px rgba(0,0,0,.5),0 4px 16px rgba(0,0,0,.35);
-  background:#fff;transform-origin:left center;backface-visibility:hidden;
-  transition:transform var(--flip-ms) var(--ease);
-  will-change:transform;
+.hero .positioning .id{display:block;font-weight:400;font-size:.82em;color:var(--pink);margin-top:8px}
+.hero .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.hero .chips span{
+  font-size:13px;letter-spacing:.03em;padding:7px 14px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.4);color:#FBEAE7;
 }
-.sheet.behind{transform:rotateY(90deg);visibility:hidden}
-.sheet img{width:100%;height:100%;object-fit:cover}
-.sheet .tag{
-  position:absolute;left:12px;bottom:12px;padding:6px 12px;font-size:12px;color:#fff;
-  background:rgba(30,8,8,.72);border-radius:6px;letter-spacing:.06em;
+.hero .cta{
+  display:inline-flex;align-items:center;gap:8px;margin-top:36px;
+  background:#fff;color:var(--deep);font-weight:700;font-size:15px;
+  padding:13px 24px;border-radius:10px;text-decoration:none;
+  transition:transform .2s,box-shadow .2s;
 }
-.navbtn{
-  position:absolute;top:50%;transform:translateY(-50%);
-  width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);
-  transition:background .2s var(--ease),opacity .2s var(--ease);z-index:5;
-}
-.navbtn:hover{background:rgba(255,255,255,.24)}
-.navbtn svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.navbtn.prev{left:clamp(4px,3vw,48px)}
-.navbtn.next{right:clamp(4px,3vw,48px)}
-.navbtn:disabled{opacity:.28;cursor:default}
-.navbtn:disabled:hover{background:rgba(255,255,255,.1)}
+.hero .cta:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.3)}
+.hero .cta svg{width:16px;height:16px;fill:none;stroke:var(--deep);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 
-/* ---------- 缩略图条 ---------- */
-.thumbs{
-  display:flex;gap:10px;justify-content:center;align-items:center;
-  padding:12px 16px 22px;overflow-x:auto;
+/* ---------- 通用块 ---------- */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,36px);margin-top:34px}
+@media (max-width:760px){.grid2{grid-template-columns:1fr}}
+.card{
+  border:1px solid var(--line);border-radius:14px;padding:clamp(18px,2.6vw,26px);
+  background:#fff;transition:border-color .2s,box-shadow .2s;
 }
-.thumb{
-  flex:0 0 auto;width:56px;aspect-ratio:794/1123;border-radius:4px;overflow:hidden;
-  border:2px solid rgba(255,255,255,.25);padding:0;opacity:.62;
-  transition:opacity .2s var(--ease),border-color .2s var(--ease),transform .2s var(--ease);
-}
-.thumb img{width:100%;height:100%;object-fit:cover}
-.thumb:hover{opacity:.9}
-.thumb[aria-current="true"]{border-color:#fff;opacity:1;transform:translateY(-3px)}
+.card:hover{border-color:#D8B9B3;box-shadow:0 8px 24px rgba(110,15,15,.07)}
+.card h3{font-size:17px;color:var(--primary);margin-bottom:8px;line-height:1.4}
+.card h3 .cn{font-weight:400}
+.card p{font-size:14.5px;color:var(--body)}
+.num{font-size:13px;font-weight:700;color:#C99;letter-spacing:.1em;margin-bottom:10px}
 
-/* ---------- 滚动视图 ---------- */
-.scrollview{display:none;padding:24px clamp(16px,5vw,48px) 48px}
-.scrollview figure{max-width:760px;margin:0 auto 40px}
-.scrollview img{
-  width:100%;border-radius:6px;
-  box-shadow:0 18px 50px rgba(0,0,0,.45);
-}
-.scrollview figcaption{
-  margin-top:10px;font-size:13px;color:var(--mut);letter-spacing:.06em;
-  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
-}
-body.mode-scroll .stage,body.mode-scroll .thumbs{display:none}
-body.mode-scroll .scrollview{display:block}
+/* ---------- 服务 ---------- */
+#layanan{background:var(--warm)}
 
-.foot{
-  text-align:center;font-size:12px;color:rgba(255,255,255,.55);
-  padding:0 16px 26px;letter-spacing:.04em;
+/* ---------- 目标 ---------- */
+.typelist{list-style:none;margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:640px){.typelist{grid-template-columns:1fr}}
+.typelist li{
+  background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;font-size:15px;
 }
-@media (max-width:640px){
-  .counter{display:none}
-  .brand .en{white-space:normal;font-size:12.5px;letter-spacing:.08em}
-  .topbar{gap:10px;padding:12px 14px}
-  .flip{height:min(62dvh,760px)}
+.typelist li b{color:var(--primary)}
+.typelist li small{display:block;color:var(--mut);font-size:12.5px;margin-top:4px}
+.region{
+  margin-top:30px;background:linear-gradient(135deg,var(--deep),var(--darkred));
+  color:#fff;border-radius:14px;padding:clamp(20px,3vw,30px);
 }
-@media (prefers-reduced-motion:reduce){
-  .sheet,.thumb,.navbtn,.viewtoggle button{transition:none!important}
+.region h3{font-size:16px;letter-spacing:.06em;color:var(--pink);margin-bottom:10px}
+.region p{font-size:15px;line-height:1.8}
+.region .big{font-size:clamp(19px,2.6vw,23px);font-weight:700;letter-spacing:.02em}
+
+/* ---------- 能力 ---------- */
+#kemampuan{background:var(--warm)}
+.cap3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px);margin-top:34px}
+@media (max-width:820px){.cap3{grid-template-columns:1fr}}
+.cap{
+  background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px 22px;
+  border-top:4px solid var(--primary);
 }
+.cap h3{font-size:16.5px;color:var(--ink);margin:12px 0 8px;line-height:1.45}
+.cap p{font-size:14px;color:var(--body)}
+.cap .src{font-size:12px;color:var(--mut);margin-top:12px}
+.cap .mark{
+  width:40px;height:40px;border-radius:10px;background:var(--warm);
+  display:flex;align-items:center;justify-content:center;color:var(--primary);font-weight:800;font-size:17px;
+}
+
+/* ---------- 案例 ---------- */
+.case{
+  display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(24px,3.4vw,44px);align-items:center;margin-top:36px;
+}
+@media (max-width:820px){.case{grid-template-columns:1fr}}
+.case figure{border-radius:14px;overflow:hidden;box-shadow:0 16px 44px rgba(43,20,18,.22)}
+.case h3{font-size:clamp(19px,2.4vw,23px);line-height:1.4}
+.case h3 .cn{display:block;font-size:14px;color:var(--mut);margin-top:8px}
+.case p{font-size:15px;color:var(--body);margin-top:16px}
+.case .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.case .meta span{font-size:12.5px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;color:var(--body)}
+.casecta{
+  display:inline-flex;align-items:center;gap:8px;margin-top:24px;font-weight:700;font-size:14.5px;
+  color:var(--primary);text-decoration:none;border-bottom:2px solid var(--primary);padding-bottom:3px;
+}
+.casecta:hover{color:var(--deep);border-color:var(--deep)}
+
+/* ---------- 联系 ---------- */
+#kontak{background:linear-gradient(150deg,var(--deep),var(--darkred) 75%);color:#fff}
+#kontak .kicker{color:var(--pink);border-color:var(--pink)}
+#kontak h2 .cn{color:var(--mut)}
+.contactgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,3.4vw,44px);margin-top:36px}
+@media (max-width:820px){.contactgrid{grid-template-columns:1fr}}
+.contactgrid .rows p{font-size:15px;line-height:1.9;color:#F6E4E1}
+.contactgrid .rows b{color:#fff}
+.placeholder{
+  display:inline-block;border:1px dashed rgba(255,255,255,.55);border-radius:6px;
+  padding:0 8px;color:var(--pink);
+}
+.qrs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:420px){.qrs{grid-template-columns:1fr}}
+.qr{
+  aspect-ratio:1;border:2px dashed rgba(255,255,255,.5);border-radius:14px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;
+  color:var(--pink);font-size:13.5px;padding:14px;
+}
+.qr b{color:#fff;font-size:14.5px}
+.hours{margin-top:22px;font-size:13.5px;color:var(--mut)}
+.foot{background:#570C0C;color:rgba(255,255,255,.55);font-size:12.5px;text-align:center;padding:18px 16px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 
 <header class="topbar">
-  <div class="brand">
-    <span class="en">RONGDA GROUP · PT RONGDA INTERNASIONAL</span>
-    <span class="cn">印尼宣传册 · 网页效果预览（A4 × 6 页）</span>
+  <div class="wrap">
+    <div class="brand">
+      <div class="en">PT RONGDA INTERNASIONAL</div>
+      <div class="cn2">荣达印尼 · Rongda Group</div>
+    </div>
+    <nav class="navlinks" aria-label="页面导航">
+      <a href="#layanan">Layanan 服务</a>
+      <a href="#target">Target 定位</a>
+      <a href="#kemampuan">Kemampuan 能力</a>
+      <a href="#studi">Studi 案例</a>
+      <a href="#kontak">Kontak 联系</a>
+    </nav>
   </div>
-  <div class="spacer"></div>
-  <div class="viewtoggle" role="group" aria-label="视图切换">
-    <button type="button" id="btnFlip" aria-pressed="true">翻页</button>
-    <button type="button" id="btnScroll" aria-pressed="false">滚动</button>
-  </div>
-  <div class="counter" id="counter">01 / 06</div>
 </header>
 
-<main>
-  <!-- 翻页视图 -->
-  <section class="stage" id="stage" aria-label="宣传册翻页视图">
-    <button type="button" class="navbtn prev" id="btnPrev" aria-label="上一页">
-      <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
-    </button>
-    <div class="flip" id="flip">
-      <div class="sheet" id="sheetOut"><img alt=""><span class="tag"></span></div>
-      <div class="sheet behind" id="sheetIn"><img alt=""><span class="tag"></span></div>
+<!-- 1 名称 + 一句话定位 -->
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">ANAK PERUSAHAAN JIANGXI RONGDA GROUP · GRUP BERDIRI 1998</p>
+    <h1>PT Rongda Internasional Instalasi dan Konstruksi</h1>
+    <p class="positioning">
+      荣达印尼｜工业与商业建筑消防系统安装及配套供应服务
+      <span class="id">Instalasi sistem proteksi kebakaran &amp; suplai peralatan untuk gedung industri dan komersial — Jabodetabek.</span>
+    </p>
+    <div class="chips">
+      <span>Wilayah: Jabodetabek</span>
+      <span>Grup Rongda — sejak 1998</span>
+      <span>Pengalaman proyek EBT 2GW di Indonesia</span>
     </div>
-    <button type="button" class="navbtn next" id="btnNext" aria-label="下一页">
-      <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
-    </button>
-  </section>
+    <div>
+      <a class="cta" href="#kontak">
+        Hubungi Kami 联系我们
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
 
-  <nav class="thumbs" id="thumbs" aria-label="页面缩略图"></nav>
+<!-- 2 实际承接的服务 -->
+<section id="layanan">
+  <div class="wrap">
+    <p class="kicker">Layanan Kami</p>
+    <h2>消防工程服务，从安装到交付<span class="cn">实际承接范围（印尼主体业务）</span></h2>
+    <div class="grid2">
+      <div class="card">
+        <div class="num">01</div>
+        <h3>Sistem Deteksi &amp; Alarm Kebakaran <span class="cn">火灾自动报警与联动</span></h3>
+        <p>Instalasi smoke / heat detector, fire alarm panel, serta pengaturan sistem联动 (programming &amp; uji fungsi).</p>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <h3>Sprinkler Otomatis &amp; Hidran <span class="cn">自动喷淋与消火栓系统</span></h3>
+        <p>Instalasi pipa sprinkler, pompa, hidran indoor / outdoor, termasuk uji tekanan dan uji fungsi.</p>
+      </div>
+      <div class="card">
+        <div class="num">03</div>
+        <h3>Gas Pemadam &amp; Exhaust Asap <span class="cn">气体灭火与防排烟</span></h3>
+        <p>Sistem gas suppression untuk ruang kritis (server room, cleanroom) dan instalasi exhaust / pressurization.</p>
+      </div>
+      <div class="card">
+        <div class="num">04</div>
+        <h3>Instalasi MEP Pendukung <span class="cn">配套机电安装（MEP）</span></h3>
+        <p>Instalasi listrik, plumbing, dan HVAC pendukung untuk bangunan industri dan komersial.</p>
+      </div>
+      <div class="card">
+        <div class="num">05</div>
+        <h3>Suplai Peralatan &amp; Material <span class="cn">消防设备与材料供应</span></h3>
+        <p>APAR, fire alarm panel, pompa kebakaran, serta material instalasi — suplai langsung atau sebagai bagian paket instalasi.</p>
+      </div>
+      <div class="card">
+        <div class="num">06</div>
+        <h3>Dokumentasi Uji &amp; Serah Terima <span class="cn">调试验收资料交付</span></h3>
+        <p>Dokumentasi uji fungsi, as-built drawing, dan berkas serah terima proyek untuk kebutuhan pemilik / pengelola gedung.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- 滚动视图 -->
-  <section class="scrollview" id="scrollview" aria-label="宣传册连续滚动视图"></section>
-</main>
+<!-- 3 目标项目类型与服务区域 -->
+<section id="target">
+  <div class="wrap">
+    <p class="kicker">Target Proyek &amp; Wilayah</p>
+    <h2>我们服务谁、在哪里服务<span class="cn">目标项目类型与服务区域</span></h2>
+    <ul class="typelist">
+      <li><b>Kawasan industri &amp; pabrik</b> 工业厂区与产业园<span>gudang, workshop, area produksi</span></li>
+      <li><b>Proyek energi baru terbarukan (EBT)</b> 新能源项目<span>base produksi panel / wafer, pembangkit</span></li>
+      <li><b>Gedung komersial</b> 商业建筑<span>mall, hotel, kantor, gedung perkantoran</span></li>
+      <li><b>Kawasan korporat &amp; pemerintah</b> 政企园区<span>kompleks perkantoran, fasilitas publik</span></li>
+    </ul>
+    <div class="region">
+      <h3>WILAYAH LAYANAN 服务区域</h3>
+      <p class="big">Jabodetabek — Jakarta · Bogor · Depok · Tangerang · Bekasi</p>
+      <p>Proyek di luar Jabodetabek dapat didiskusikan sesuai skala &amp; jadwal. 雅加达都市圈以外项目可按规模与工期洽谈。</p>
+    </div>
+  </div>
+</section>
 
-<footer class="foot">效果稿 · 联系方式与二维码以最终印刷版为准 · 方向键 ← → 或左右滑动亦可翻页</footer>
+<!-- 4 有证据的能力点 -->
+<section id="kemampuan">
+  <div class="wrap">
+    <p class="kicker">Kemampuan</p>
+    <h2>三个可验证的能力点<span class="cn">均有公开材料或项目记录支撑</span></h2>
+    <div class="cap3">
+      <div class="cap">
+        <div class="mark">ID</div>
+        <h3>Pengalaman proyek EBT 2GW di Indonesia<span class="cn" style="display:block;font-size:12.5px;color:var(--mut)">印尼 2GW 新能源项目落地经验</span></h3>
+        <p>Mengerjakan instalasi proteksi kebakaran &amp; MEP untuk basis produksi wafer monokristal 2GW — mencakup cleanroom, gudang bahan kimia, dan ruang pembangkit daya.</p>
+        <p class="src">依据：集团印尼项目记录（2025）</p>
+      </div>
+      <div class="cap">
+        <div class="mark">G</div>
+        <h3>Sumber daya grup: 750 regu kerja, 300+ insinyur<span class="cn" style="display:block;font-size:12.5px;color:var(--mut)">集团施工与技术人员储备</span></h3>
+        <p>Grup Rongda berdiri sejak 1998, dengan 750 regu instalasi dan 300+ insinyur di 22 kantor cabang (Tiongkok), didukung sekolah pelatihan pemadam kebakaran sendiri.</p>
+        <p class="src">依据：集团宣传册与公开资料（2020 年集团营业额超 4 亿元）</p>
+      </div>
+      <div class="cap">
+        <div class="mark">ISO</div>
+        <h3>Sertifikasi sistem manajemen ISO<span class="cn" style="display:block;font-size:12.5px;color:var(--mut)">ISO 三体系认证（集团持有）</span></h3>
+        <p>Grup memegang sertifikasi ISO 9001 (mutu), ISO 14001 (lingkungan), dan ISO 45001 (K3) — sistem manajemen proyek yang sudah berjalan bertahun-tahun.</p>
+        <p class="src">依据：集团资质证书（GB/T 19001 / 24001 / 45001）</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<script>
-(function(){
-  var PAGES = [
-    {src:"media/page-1.png", tag:"封面 · PT Rongda Internasional"},
-    {src:"media/page-2.png", tag:"集团实力 · 发展历程与数据"},
-    {src:"media/page-3.png", tag:"我们的服务 · 施工与供应一体化"},
-    {src:"media/page-4.png", tag:"印尼项目 · 2GW 单晶切片基地"},
-    {src:"media/page-5.png", tag:"智慧消防 · 集团数字化能力"},
-    {src:"media/page-6.png", tag:"封底 · 资质荣誉与联系方式"}
-  ];
-  var N = PAGES.length, cur = 0, busy = false, mode = "flip";
+<!-- 5 代表案例 -->
+<section id="studi">
+  <div class="wrap">
+    <p class="kicker">Studi Kasus</p>
+    <h2>代表案例<span class="cn">在印尼交付的第一个项目</span></h2>
+    <div class="case">
+      <figure>
+        <img src="media/indonesia.png" alt="Proyek basis produksi wafer monokristal 2GW di Indonesia — tampak udara" loading="lazy">
+      </figure>
+      <div>
+        <h3>Proyek basis produksi wafer monokristal 2GW<span class="cn">印尼 2GW 单晶拉棒及切片基地</span></h3>
+        <p>Instalasi proteksi kebakaran dan instalasi mekanikal-elektrikal untuk area produksi bersih (cleanroom), gudang bahan kimia, dan ruang pembangkit daya — pengalaman pertama grup Rongda di pasar Indonesia. 项目涵盖洁净车间、化学品库、动力站房的消防及机电安装。</p>
+        <div class="meta">
+          <span>Lokasi: Indonesia</span>
+          <span>Lingkup: Fire Protection + MEP</span>
+          <span>Tahun: 2025</span>
+        </div>
+        <a class="casecta" href="brochure.html">Lihat brosur lengkap 查看完整宣传册 →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-  var sheetOut = document.getElementById("sheetOut");
-  var sheetIn  = document.getElementById("sheetIn");
-  var counter  = document.getElementById("counter");
-  var btnPrev  = document.getElementById("btnPrev");
-  var btnNext  = document.getElementById("btnNext");
-  var btnFlip  = document.getElementById("btnFlip");
-  var btnScroll= document.getElementById("btnScroll");
-  var thumbs   = document.getElementById("thumbs");
-  var scrollview = document.getElementById("scrollview");
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+<!-- 6 联系方式 -->
+<section id="kontak">
+  <div class="wrap">
+    <p class="kicker">Kontak</p>
+    <h2>谈项目，直接联系<span class="cn">联系人、WhatsApp 与官网二维码</span></h2>
+    <div class="contactgrid">
+      <div class="rows">
+        <p><b>PT Rongda Internasional Instalasi dan Konstruksi</b></p>
+        <p>Ruko Osaka Shopping Arcade, Blok A No.6 PIK 2, Kosambi,<br>Kab. Tangerang, Banten 15213, Indonesia</p>
+        <p>NPWP: 1000 0000 0750 0973</p>
+        <p>Kontak / 联系人：<span class="placeholder">待补充</span></p>
+        <p>WhatsApp：<span class="placeholder">待补充</span>　·　Email：<span class="placeholder">待补充</span></p>
+        <p>官网 / Situs web：<span class="placeholder">待上线</span></p>
+        <p class="hours">Jam operasional 工作时间：Senin–Jumat 周一至周五 · 08.00–17.00 WIB</p>
+      </div>
+      <div class="qrs">
+        <div class="qr"><b>WhatsApp QR</b>扫码直接发起咨询<br><span class="placeholder">待补充</span></div>
+        <div class="qr"><b>官网 QR</b>扫码查看公司与案例<br><span class="placeholder">待上线</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  function pad(n){ return (n<10?"0":"")+n; }
+<footer class="foot">效果稿 · 联系方式与二维码以最终版为准 · © 2025 PT Rongda Internasional Instalasi dan Konstruksi</footer>
 
-  function setSheet(sheet, i){
-    var img = sheet.querySelector("img");
-    if (img.getAttribute("src") !== PAGES[i].src) img.src = PAGES[i].src;
-    img.alt = "宣传册第 " + (i+1) + " 页 · " + PAGES[i].tag;
-    sheet.querySelector(".tag").textContent = pad(i+1) + " · " + PAGES[i].tag;
-  }
-
-  function updateUI(){
-    counter.textContent = pad(cur+1) + " / " + pad(N);
-    btnPrev.disabled = (cur === 0);
-    btnNext.disabled = (cur === N-1);
-    var ts = thumbs.children;
-    for (var k=0;k<ts.length;k++) ts[k].setAttribute("aria-current", k===cur ? "true" : "false");
-  }
-
-  function goTo(i, dir){
-    if (busy || i===cur || i<0 || i>=N) return;
-    dir = dir || (i>cur ? 1 : -1);
-    if (mode !== "flip" || reduceMotion){
-      cur = i; setSheet(sheetOut, cur);
-      sheetOut.style.transform = ""; sheetIn.style.transform = "rotateY(90deg)";
-      updateUI(); return;
-    }
-    busy = true;
-    var out = sheetOut, inn = sheetIn;
-    setSheet(inn, i);
-    inn.classList.remove("behind");
-    inn.style.visibility = "visible";
-    // 出场页向左（或右）掀开，入场页从另一侧立起
-    if (dir > 0){
-      out.style.transformOrigin = "left center";
-      inn.style.transformOrigin = "right center";
-      out.style.transform = "rotateY(-90deg)";
-      inn.style.transform = "rotateY(0deg)";
-    } else {
-      out.style.transformOrigin = "right center";
-      inn.style.transformOrigin = "left center";
-      out.style.transform = "rotateY(90deg)";
-      inn.style.transform = "rotateY(0deg)";
-    }
-    setTimeout(function(){
-      cur = i;
-      // 交换角色：入场页成为新的底页
-      var tmp = sheetOut; sheetOut = sheetIn; sheetIn = tmp;
-      sheetOut.style.transform = "";
-      sheetOut.style.visibility = "";
-      sheetIn.style.transform = "rotateY(90deg)";
-      sheetIn.classList.add("behind");
-      busy = false; updateUI();
-    }, reduceMotion ? 0 : 470);
-    updateUI();
-  }
-
-  /* 缩略图 */
-  PAGES.forEach(function(p, i){
-    var b = document.createElement("button");
-    b.type = "button"; b.className = "thumb"; b.setAttribute("aria-label", "跳到第 "+(i+1)+" 页");
-    var im = document.createElement("img");
-    im.src = p.src; im.alt = ""; im.loading = "lazy";
-    b.appendChild(im);
-    b.addEventListener("click", function(){ goTo(i); });
-    thumbs.appendChild(b);
-  });
-
-  /* 滚动视图 */
-  PAGES.forEach(function(p, i){
-    var f = document.createElement("figure");
-    var im = document.createElement("img");
-    im.src = p.src; im.alt = "宣传册第 " + (i+1) + " 页 · " + p.tag; im.loading = "lazy";
-    var cap = document.createElement("figcaption");
-    var s1 = document.createElement("span"); s1.textContent = pad(i+1)+" / "+pad(N);
-    var s2 = document.createElement("span"); s2.textContent = p.tag;
-    cap.appendChild(s1); cap.appendChild(s2);
-    f.appendChild(im); f.appendChild(cap);
-    scrollview.appendChild(f);
-  });
-
-  /* 视图切换 */
-  function setMode(m){
-    mode = m;
-    document.body.classList.toggle("mode-scroll", m==="scroll");
-    btnFlip.setAttribute("aria-pressed", m==="flip" ? "true" : "false");
-    btnScroll.setAttribute("aria-pressed", m==="scroll" ? "true" : "false");
-  }
-  btnFlip.addEventListener("click", function(){ setMode("flip"); });
-  btnScroll.addEventListener("click", function(){ setMode("scroll"); });
-  if (window.matchMedia("(max-width: 700px)").matches) setMode("scroll");
-
-  /* 事件 */
-  btnPrev.addEventListener("click", function(){ goTo(cur-1, -1); });
-  btnNext.addEventListener("click", function(){ goTo(cur+1, 1); });
-  document.addEventListener("keydown", function(e){
-    if (mode !== "flip") return;
-    if (e.key === "ArrowLeft") goTo(cur-1, -1);
-    else if (e.key === "ArrowRight") goTo(cur+1, 1);
-  });
-  var tx = null, ty = null;
-  var stage = document.getElementById("stage");
-  stage.addEventListener("touchstart", function(e){
-    tx = e.touches[0].clientX; ty = e.touches[0].clientY;
-  }, {passive:true});
-  stage.addEventListener("touchend", function(e){
-    if (tx === null) return;
-    var dx = e.changedTouches[0].clientX - tx;
-    var dy = e.changedTouches[0].clientY - ty;
-    if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy)*1.4){
-      if (dx < 0) goTo(cur+1, 1); else goTo(cur-1, -1);
-    }
-    tx = ty = null;
-  }, {passive:true});
-
-  /* 滚动视图页码同步 */
-  if ("IntersectionObserver" in window){
-    var obs = new IntersectionObserver(function(entries){
-      if (mode !== "scroll") return;
-      entries.forEach(function(en){
-        if (en.isIntersecting){
-          var idx = Array.prototype.indexOf.call(scrollview.children, en.target);
-          if (idx >= 0){ cur = idx; updateUI(); }
-        }
-      });
-    }, {rootMargin:"-45% 0px -45% 0px"});
-    Array.prototype.forEach.call(scrollview.children, function(f){ obs.observe(f); });
-  }
-
-  /* 预加载全部页面图 */
-  PAGES.forEach(function(p){ var im = new Image(); im.src = p.src; });
-
-  /* 初始化 */
-  setSheet(sheetOut, 0);
-  sheetIn.classList.add("behind");
-  updateUI();
-})();
-</script>
 </body>
 </html>
