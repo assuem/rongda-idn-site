@@ -50,6 +50,26 @@ h2 .cn{display:block;font-size:14px;font-weight:400;margin-top:8px;letter-spacin
   padding:8px 12px;border-radius:999px;transition:background .2s,color .2s;
 }
 .navlinks a:hover{background:rgba(255,255,255,.14);color:#fff}
+.menu-btn{
+  display:none;background:none;border:1.5px solid rgba(255,217,208,.5);
+  border-radius:8px;width:38px;height:34px;cursor:pointer;margin-left:auto;
+  flex-direction:column;align-items:center;justify-content:center;gap:4px;flex:0 0 auto;
+}
+.menu-btn span{display:block;width:16px;height:2px;background:var(--pink);border-radius:2px}
+@media (max-width:860px){
+  .topbar .wrap{flex-wrap:nowrap}
+  .brand .en{font-size:13px;white-space:normal}
+  .brand .cn2{font-size:10.5px;white-space:normal}
+  .navlinks{
+    display:none;position:absolute;top:100%;left:0;right:0;margin-left:0;
+    flex-direction:column;background:rgba(87,12,12,.98);
+    padding:8px 18px 14px;gap:2px;border-bottom:1px solid rgba(255,217,208,.2);
+  }
+  .navlinks.open{display:flex}
+  .navlinks a{padding:11px 4px;border-radius:0;border-bottom:1px solid rgba(255,217,208,.12)}
+  .navlinks a:last-child{border-bottom:none}
+  .menu-btn{display:flex}
+}
 
 /* ---------- HERO ---------- */
 .hero{
@@ -184,13 +204,14 @@ h2 .cn{display:block;font-size:14px;font-weight:400;margin-top:8px;letter-spacin
       <div class="en">PT RONGDA INTERNASIONAL</div>
       <div class="cn2">荣达印尼 · Rongda Group</div>
     </div>
-    <nav class="navlinks" aria-label="页面导航">
+    <nav class="navlinks" id="navlinks" aria-label="页面导航">
       <a href="#layanan">Layanan 服务</a>
       <a href="#target">Target 定位</a>
       <a href="#kemampuan">Kemampuan 能力</a>
       <a href="#studi">Studi 案例</a>
       <a href="#kontak">Kontak 联系</a>
     </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
@@ -356,5 +377,20 @@ h2 .cn{display:block;font-size:14px;font-weight:400;margin-top:8px;letter-spacin
 
 <footer class="foot">效果稿 · 联系方式与二维码以最终版为准 · © 2025 PT Rongda Internasional Instalasi dan Konstruksi</footer>
 
+<script>
+(function(){
+  var btn = document.getElementById('menuBtn');
+  var nav = document.getElementById('navlinks');
+  if(btn && nav){
+    btn.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){nav.classList.remove('open');btn.setAttribute('aria-expanded','false')}
+    });
+  }
+})();
+</script>
 </body>
 </html>
