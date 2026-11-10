@@ -120,9 +120,16 @@ section{padding:clamp(56px,8vw,96px) 0}
 .stats{background:#fff;border-bottom:1px solid var(--line)}
 .stats .row{
   display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
-  padding:clamp(28px,4vw,40px) 0;
+  padding-top:clamp(28px,4vw,40px);padding-bottom:clamp(28px,4vw,40px);
 }
-@media (max-width:760px){.stats .row{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:760px){
+  .stats .row{grid-template-columns:1fr;gap:0;padding-top:8px;padding-bottom:8px}
+  .stat{display:flex;align-items:baseline;gap:16px;padding:13px 0;border-bottom:1px dashed var(--line)}
+  .stat:last-child{border-bottom:none}
+  .stat b{display:block;min-width:74px;font-size:24px}
+  .stat .stxt span{display:block;font-size:13.5px;color:var(--body)}
+  .stat .stxt small{display:block;font-size:12px;color:var(--mut);margin-top:1px;word-break:keep-all}
+}
 .stat b{font-size:clamp(24px,3vw,32px);color:var(--primary);font-weight:800;display:block;line-height:1.2}
 .stat span{font-size:12.5px;color:var(--mut)}
 .stat small{display:block;font-size:11px;color:var(--mut);margin-top:2px}
@@ -364,10 +371,10 @@ h2.title .cn{display:block;font-size:.6em;color:var(--mut);font-weight:600;margi
 <!-- 统计条 -->
 <div class="stats">
   <div class="wrap row">
-    <div class="stat reveal"><b>1998</b><span>Grup Rongda berdiri 集团成立</span></div>
-    <div class="stat reveal"><b>750</b><span>Tim konstruksi profesional 专业施工班组</span><small>sumber daya Grup 集团资源</small></div>
-    <div class="stat reveal"><b>300+</b><span>Insinyur 工程师</span><small>sumber daya Grup 集团资源</small></div>
-    <div class="stat reveal"><b>2GW</b><span>Pengalaman proyek EBT di Indonesia 印尼新能源项目经验</span></div>
+    <div class="stat reveal"><b>1998</b><div class="stxt"><span>Grup Rongda berdiri</span><small>集团成立</small></div></div>
+    <div class="stat reveal"><b>750</b><div class="stxt"><span>Tim konstruksi profesional</span><small>专业施工班组 · 集团资源</small></div></div>
+    <div class="stat reveal"><b>300+</b><div class="stxt"><span>Insinyur</span><small>工程师 · 集团资源</small></div></div>
+    <div class="stat reveal"><b>2GW</b><div class="stxt"><span>Pengalaman proyek EBT di Indonesia</span><small>印尼新能源项目经验</small></div></div>
   </div>
 </div>
 
