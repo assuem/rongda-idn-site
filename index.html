@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#6E0F0F">
+<title>PT Rongda Internasional · 印尼宣传册效果预览</title>
+<style>
+:root{
+  --deep:#6E0F0F; --darkred:#8A1414; --primary:#C00000;
+  --pink:#FFD9D0; --ink:#2B1B1B; --line:#E4DAD2; --mut:#E8C7C2;
+  --stage-bg1:#5C0D0D; --stage-bg2:#8A1414;
+  --radius:12px;
+  --flip-ms:460ms;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  color:#fff;background:linear-gradient(135deg,var(--stage-bg1),var(--stage-bg2));
+  min-height:100dvh;-webkit-font-smoothing:antialiased;
+}
+img{display:block}
+button{cursor:pointer;font:inherit;color:inherit;background:none;border:0}
+button:focus-visible,a:focus-visible{outline:2px solid var(--pink);outline-offset:3px;border-radius:6px}
+
+/* ---------- 顶栏 ---------- */
+.topbar{
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+  padding:14px clamp(16px,4vw,40px);
+  border-bottom:1px solid rgba(255,255,255,.14);
+}
+.brand{display:flex;flex-direction:column;line-height:1.25;min-width:0}
+.brand .en{font-weight:700;letter-spacing:.14em;font-size:15px;white-space:nowrap}
+.brand .cn{font-size:12px;color:var(--mut)}
+.topbar .spacer{flex:1}
+.counter{
+  font-variant-numeric:tabular-nums;font-size:14px;letter-spacing:.12em;color:var(--pink);
+  border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:5px 14px;white-space:nowrap;
+}
+.viewtoggle{display:flex;border:1px solid rgba(255,255,255,.28);border-radius:999px;overflow:hidden}
+.viewtoggle button{
+  padding:5px 14px;font-size:13px;color:var(--mut);transition:background .2s var(--ease),color .2s var(--ease);
+}
+.viewtoggle button[aria-pressed="true"]{background:#fff;color:var(--deep);font-weight:600}
+.viewtoggle button:not([aria-pressed="true"]):hover{color:#fff}
+
+/* ---------- 翻页舞台 ---------- */
+.stage{
+  display:flex;align-items:center;justify-content:center;
+  padding:clamp(12px,3vh,32px) 16px;
+  min-height:calc(100dvh - 64px - 108px);
+}
+.flip{
+  position:relative;height:min(74dvh,760px);aspect-ratio:794/1123;
+  perspective:2000px;flex:0 0 auto;
+}
+.sheet{
+  position:absolute;inset:0;border-radius:4px;overflow:hidden;
+  box-shadow:0 24px 70px rgba(0,0,0,.5),0 4px 16px rgba(0,0,0,.35);
+  background:#fff;transform-origin:left center;backface-visibility:hidden;
+  transition:transform var(--flip-ms) var(--ease);
+  will-change:transform;
+}
+.sheet.behind{transform:rotateY(90deg);visibility:hidden}
+.sheet img{width:100%;height:100%;object-fit:cover}
+.sheet .tag{
+  position:absolute;left:12px;bottom:12px;padding:6px 12px;font-size:12px;color:#fff;
+  background:rgba(30,8,8,.72);border-radius:6px;letter-spacing:.06em;
+}
+.navbtn{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);
+  transition:background .2s var(--ease),opacity .2s var(--ease);z-index:5;
+}
+.navbtn:hover{background:rgba(255,255,255,.24)}
+.navbtn svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.navbtn.prev{left:clamp(4px,3vw,48px)}
+.navbtn.next{right:clamp(4px,3vw,48px)}
+.navbtn:disabled{opacity:.28;cursor:default}
+.navbtn:disabled:hover{background:rgba(255,255,255,.1)}
+
+/* ---------- 缩略图条 ---------- */
+.thumbs{
+  display:flex;gap:10px;justify-content:center;align-items:center;
+  padding:12px 16px 22px;overflow-x:auto;
+}
+.thumb{
+  flex:0 0 auto;width:56px;aspect-ratio:794/1123;border-radius:4px;overflow:hidden;
+  border:2px solid rgba(255,255,255,.25);padding:0;opacity:.62;
+  transition:opacity .2s var(--ease),border-color .2s var(--ease),transform .2s var(--ease);
+}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb:hover{opacity:.9}
+.thumb[aria-current="true"]{border-color:#fff;opacity:1;transform:translateY(-3px)}
+
+/* ---------- 滚动视图 ---------- */
+.scrollview{display:none;padding:24px clamp(16px,5vw,48px) 48px}
+.scrollview figure{max-width:760px;margin:0 auto 40px}
+.scrollview img{
+  width:100%;border-radius:6px;
+  box-shadow:0 18px 50px rgba(0,0,0,.45);
+}
+.scrollview figcaption{
+  margin-top:10px;font-size:13px;color:var(--mut);letter-spacing:.06em;
+  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+}
+body.mode-scroll .stage,body.mode-scroll .thumbs{display:none}
+body.mode-scroll .scrollview{display:block}
+
+.foot{
+  text-align:center;font-size:12px;color:rgba(255,255,255,.55);
+  padding:0 16px 26px;letter-spacing:.04em;
+}
+@media (max-width:640px){
+  .counter{display:none}
+  .brand .en{white-space:normal;font-size:12.5px;letter-spacing:.08em}
+  .topbar{gap:10px;padding:12px 14px}
+  .flip{height:min(62dvh,760px)}
+}
+@media (prefers-reduced-motion:reduce){
+  .sheet,.thumb,.navbtn,.viewtoggle button{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="en">RONGDA GROUP · PT RONGDA INTERNASIONAL</span>
+    <span class="cn">印尼宣传册 · 网页效果预览（A4 × 6 页）</span>
+  </div>
+  <div class="spacer"></div>
+  <div class="viewtoggle" role="group" aria-label="视图切换">
+    <button type="button" id="btnFlip" aria-pressed="true">翻页</button>
+    <button type="button" id="btnScroll" aria-pressed="false">滚动</button>
+  </div>
+  <div class="counter" id="counter">01 / 06</div>
+</header>
+
+<main>
+  <!-- 翻页视图 -->
+  <section class="stage" id="stage" aria-label="宣传册翻页视图">
+    <button type="button" class="navbtn prev" id="btnPrev" aria-label="上一页">
+      <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <div class="flip" id="flip">
+      <div class="sheet" id="sheetOut"><img alt=""><span class="tag"></span></div>
+      <div class="sheet behind" id="sheetIn"><img alt=""><span class="tag"></span></div>
+    </div>
+    <button type="button" class="navbtn next" id="btnNext" aria-label="下一页">
+      <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+  </section>
+
+  <nav class="thumbs" id="thumbs" aria-label="页面缩略图"></nav>
+
+  <!-- 滚动视图 -->
+  <section class="scrollview" id="scrollview" aria-label="宣传册连续滚动视图"></section>
+</main>
+
+<footer class="foot">效果稿 · 联系方式与二维码以最终印刷版为准 · 方向键 ← → 或左右滑动亦可翻页</footer>
+
+<script>
+(function(){
+  var PAGES = [
+    {src:"media/page-1.png", tag:"封面 · PT Rongda Internasional"},
+    {src:"media/page-2.png", tag:"集团实力 · 发展历程与数据"},
+    {src:"media/page-3.png", tag:"我们的服务 · 施工与供应一体化"},
+    {src:"media/page-4.png", tag:"印尼项目 · 2GW 单晶切片基地"},
+    {src:"media/page-5.png", tag:"智慧消防 · 集团数字化能力"},
+    {src:"media/page-6.png", tag:"封底 · 资质荣誉与联系方式"}
+  ];
+  var N = PAGES.length, cur = 0, busy = false, mode = "flip";
+
+  var sheetOut = document.getElementById("sheetOut");
+  var sheetIn  = document.getElementById("sheetIn");
+  var counter  = document.getElementById("counter");
+  var btnPrev  = document.getElementById("btnPrev");
+  var btnNext  = document.getElementById("btnNext");
+  var btnFlip  = document.getElementById("btnFlip");
+  var btnScroll= document.getElementById("btnScroll");
+  var thumbs   = document.getElementById("thumbs");
+  var scrollview = document.getElementById("scrollview");
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function pad(n){ return (n<10?"0":"")+n; }
+
+  function setSheet(sheet, i){
+    var img = sheet.querySelector("img");
+    if (img.getAttribute("src") !== PAGES[i].src) img.src = PAGES[i].src;
+    img.alt = "宣传册第 " + (i+1) + " 页 · " + PAGES[i].tag;
+    sheet.querySelector(".tag").textContent = pad(i+1) + " · " + PAGES[i].tag;
+  }
+
+  function updateUI(){
+    counter.textContent = pad(cur+1) + " / " + pad(N);
+    btnPrev.disabled = (cur === 0);
+    btnNext.disabled = (cur === N-1);
+    var ts = thumbs.children;
+    for (var k=0;k<ts.length;k++) ts[k].setAttribute("aria-current", k===cur ? "true" : "false");
+  }
+
+  function goTo(i, dir){
+    if (busy || i===cur || i<0 || i>=N) return;
+    dir = dir || (i>cur ? 1 : -1);
+    if (mode !== "flip" || reduceMotion){
+      cur = i; setSheet(sheetOut, cur);
+      sheetOut.style.transform = ""; sheetIn.style.transform = "rotateY(90deg)";
+      updateUI(); return;
+    }
+    busy = true;
+    var out = sheetOut, inn = sheetIn;
+    setSheet(inn, i);
+    inn.classList.remove("behind");
+    inn.style.visibility = "visible";
+    // 出场页向左（或右）掀开，入场页从另一侧立起
+    if (dir > 0){
+      out.style.transformOrigin = "left center";
+      inn.style.transformOrigin = "right center";
+      out.style.transform = "rotateY(-90deg)";
+      inn.style.transform = "rotateY(0deg)";
+    } else {
+      out.style.transformOrigin = "right center";
+      inn.style.transformOrigin = "left center";
+      out.style.transform = "rotateY(90deg)";
+      inn.style.transform = "rotateY(0deg)";
+    }
+    setTimeout(function(){
+      cur = i;
+      // 交换角色：入场页成为新的底页
+      var tmp = sheetOut; sheetOut = sheetIn; sheetIn = tmp;
+      sheetOut.style.transform = "";
+      sheetOut.style.visibility = "";
+      sheetIn.style.transform = "rotateY(90deg)";
+      sheetIn.classList.add("behind");
+      busy = false; updateUI();
+    }, reduceMotion ? 0 : 470);
+    updateUI();
+  }
+
+  /* 缩略图 */
+  PAGES.forEach(function(p, i){
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "thumb"; b.setAttribute("aria-label", "跳到第 "+(i+1)+" 页");
+    var im = document.createElement("img");
+    im.src = p.src; im.alt = ""; im.loading = "lazy";
+    b.appendChild(im);
+    b.addEventListener("click", function(){ goTo(i); });
+    thumbs.appendChild(b);
+  });
+
+  /* 滚动视图 */
+  PAGES.forEach(function(p, i){
+    var f = document.createElement("figure");
+    var im = document.createElement("img");
+    im.src = p.src; im.alt = "宣传册第 " + (i+1) + " 页 · " + p.tag; im.loading = "lazy";
+    var cap = document.createElement("figcaption");
+    var s1 = document.createElement("span"); s1.textContent = pad(i+1)+" / "+pad(N);
+    var s2 = document.createElement("span"); s2.textContent = p.tag;
+    cap.appendChild(s1); cap.appendChild(s2);
+    f.appendChild(im); f.appendChild(cap);
+    scrollview.appendChild(f);
+  });
+
+  /* 视图切换 */
+  function setMode(m){
+    mode = m;
+    document.body.classList.toggle("mode-scroll", m==="scroll");
+    btnFlip.setAttribute("aria-pressed", m==="flip" ? "true" : "false");
+    btnScroll.setAttribute("aria-pressed", m==="scroll" ? "true" : "false");
+  }
+  btnFlip.addEventListener("click", function(){ setMode("flip"); });
+  btnScroll.addEventListener("click", function(){ setMode("scroll"); });
+  if (window.matchMedia("(max-width: 700px)").matches) setMode("scroll");
+
+  /* 事件 */
+  btnPrev.addEventListener("click", function(){ goTo(cur-1, -1); });
+  btnNext.addEventListener("click", function(){ goTo(cur+1, 1); });
+  document.addEventListener("keydown", function(e){
+    if (mode !== "flip") return;
+    if (e.key === "ArrowLeft") goTo(cur-1, -1);
+    else if (e.key === "ArrowRight") goTo(cur+1, 1);
+  });
+  var tx = null, ty = null;
+  var stage = document.getElementById("stage");
+  stage.addEventListener("touchstart", function(e){
+    tx = e.touches[0].clientX; ty = e.touches[0].clientY;
+  }, {passive:true});
+  stage.addEventListener("touchend", function(e){
+    if (tx === null) return;
+    var dx = e.changedTouches[0].clientX - tx;
+    var dy = e.changedTouches[0].clientY - ty;
+    if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy)*1.4){
+      if (dx < 0) goTo(cur+1, 1); else goTo(cur-1, -1);
+    }
+    tx = ty = null;
+  }, {passive:true});
+
+  /* 滚动视图页码同步 */
+  if ("IntersectionObserver" in window){
+    var obs = new IntersectionObserver(function(entries){
+      if (mode !== "scroll") return;
+      entries.forEach(function(en){
+        if (en.isIntersecting){
+          var idx = Array.prototype.indexOf.call(scrollview.children, en.target);
+          if (idx >= 0){ cur = idx; updateUI(); }
+        }
+      });
+    }, {rootMargin:"-45% 0px -45% 0px"});
+    Array.prototype.forEach.call(scrollview.children, function(f){ obs.observe(f); });
+  }
+
+  /* 预加载全部页面图 */
+  PAGES.forEach(function(p){ var im = new Image(); im.src = p.src; });
+
+  /* 初始化 */
+  setSheet(sheetOut, 0);
+  sheetIn.classList.add("behind");
+  updateUI();
+})();
+</script>
+</body>
+</html>
