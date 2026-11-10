@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PT Rongda Internasional Instalasi dan Konstruksi — Instalasi MEP &amp; Renovasi Proteksi Kebakaran Pabrik</title>
-<meta name="description" content="Anak perusahaan Jiangxi Rongda Group. Instalasi MEP & renovasi sistem proteksi kebakaran untuk pabrik dan gedung industri di Jabodetabek, Indonesia.">
+<meta name="description" content="Anak perusahaan Jiangxi Rongda Group (berdiri 1998). Instalasi MEP & renovasi sistem proteksi kebakaran untuk pabrik dan gedung industri di Jabodetabek — portofolio proyek, smart fire protection, kontak langsung.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%236E0F0F'/%3E%3Ctext x='16' y='22' font-size='16' font-family='Arial' font-weight='bold' fill='%23FFD9D0' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
 <style>
 :root{
@@ -224,16 +224,85 @@ h2.title .cn{display:block;font-size:.6em;color:var(--mut);font-weight:600;margi
   text-decoration:none;border-bottom:2px solid var(--primary);padding-bottom:2px;
 }
 
-/* ---------- Kemampuan ---------- */
-.cap{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-@media (max-width:860px){.cap{grid-template-columns:1fr}}
-.capc{
-  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 20px;
-  border-top:4px solid var(--primary);
+/* ---------- 发展历程 ---------- */
+.timeline{list-style:none;max-width:720px;position:relative;padding-left:28px}
+.timeline::before{content:"";position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.timeline li{position:relative;padding-bottom:24px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{
+  content:"";position:absolute;left:-24px;top:5px;width:14px;height:14px;border-radius:50%;
+  background:#fff;border:3px solid var(--primary);
 }
-.capc b{font-size:15.5px;display:block;margin-bottom:8px}
-.capc p{font-size:13px;color:var(--body)}
-.capc .src{margin-top:12px;font-size:11.5px;color:var(--mut);border-top:1px dashed var(--line);padding-top:10px}
+.timeline li.hl::before{background:var(--pink);border-color:var(--deep)}
+.timeline .year{font-weight:800;color:var(--primary);font-size:16.5px;letter-spacing:.5px}
+.timeline li.hl .year{color:var(--deep)}
+.timeline p{font-size:13.5px;color:var(--body);margin-top:3px}
+
+/* ---------- 服务流程 ---------- */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+@media (max-width:1000px){.steps{grid-template-columns:repeat(3,1fr)}.step::after{display:none}}
+@media (max-width:640px){.steps{grid-template-columns:1fr}}
+.step{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 16px;
+  position:relative;
+}
+.step .sn{font-size:12px;font-weight:800;color:var(--primary);letter-spacing:1.5px}
+.step b{display:block;font-size:14.5px;margin-top:6px;line-height:1.4}
+.step .cn{display:block;font-size:11.5px;color:var(--mut);font-weight:600;margin:2px 0 6px}
+.step p{font-size:12.5px;color:var(--body)}
+.step::after{
+  content:"→";position:absolute;right:-14px;top:36px;color:var(--primary);
+  font-weight:800;font-size:16px;
+}
+.step:last-child::after{display:none}
+
+/* ---------- 项目业绩 ---------- */
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+@media (max-width:900px){.pgrid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.pgrid{grid-template-columns:1fr}}
+.pj{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;
+  display:flex;flex-direction:column;gap:8px;transition:box-shadow .2s ease,transform .2s ease;
+}
+.pj:hover{box-shadow:0 10px 26px rgba(110,15,15,.09);transform:translateY(-3px)}
+.pj .pt{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.pj .pt span{
+  font-size:11px;color:var(--deep);border:1px solid rgba(110,15,15,.3);
+  border-radius:999px;padding:2px 10px;background:#fff;white-space:nowrap;
+}
+.pj .pt small{font-size:11.5px;color:var(--mut);white-space:nowrap}
+.pj b{font-size:15px;line-height:1.45}
+.pj b .id{display:block;font-size:.8em;color:var(--mut);font-weight:600;margin-top:3px}
+.pj p{font-size:12.5px;color:var(--body)}
+.pj .scope{
+  margin-top:auto;font-size:12px;color:var(--deep);
+  border-top:1px dashed var(--line);padding-top:10px;
+}
+.proj-note{
+  margin-top:22px;font-size:12.5px;color:var(--mut);
+  background:var(--warm);border:1px dashed var(--line);border-radius:10px;padding:12px 16px;
+}
+
+/* ---------- 智慧消防 ---------- */
+#smart{background:linear-gradient(150deg,#570C0C,var(--deep) 62%,var(--darkred));color:#fff}
+#smart .kicker{color:var(--pink);border-color:rgba(255,217,208,.4)}
+#smart h2.title .cn{color:rgba(255,235,229,.65)}
+#smart .lead{color:rgba(255,235,229,.82)}
+.smartgrid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(24px,4vw,44px);align-items:start}
+@media (max-width:860px){.smartgrid{grid-template-columns:1fr}}
+.smart-nums{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.smart-nums div{background:rgba(255,255,255,.07);border:1px solid rgba(255,217,208,.22);border-radius:12px;padding:16px 18px}
+.smart-nums b{font-size:clamp(20px,2.6vw,26px);color:var(--pink);display:block;line-height:1.2}
+.smart-nums span{font-size:12.5px;color:#F6E4E1}
+.smart-proj{list-style:none;display:grid;gap:12px}
+.smart-proj li{background:rgba(255,255,255,.07);border:1px solid rgba(255,217,208,.22);border-radius:12px;padding:15px 18px}
+.smart-proj small{color:var(--pink);font-size:11.5px;letter-spacing:1px}
+.smart-proj b{display:block;font-size:14.5px;margin-top:3px}
+.smart-proj p{font-size:12.5px;color:rgba(255,235,229,.85);margin-top:5px}
+.smart-note{
+  margin-top:22px;font-size:12.5px;color:rgba(255,235,229,.65);
+  background:rgba(255,255,255,.05);border:1px dashed rgba(255,217,208,.3);border-radius:10px;padding:12px 16px;
+}
 
 /* ---------- Brosur ---------- */
 #brosur{background:#fff}
@@ -314,8 +383,9 @@ h2.title .cn{display:block;font-size:.6em;color:var(--mut);font-weight:600;margi
     <nav class="nav">
       <a href="#tentang">Tentang 关于</a>
       <a href="#layanan">Layanan 服务</a>
-      <a href="#wilayah">Wilayah 区域</a>
-      <a href="#kasus">Studi Kasus 案例</a>
+      <a href="#proses">Proses 流程</a>
+      <a href="#proyek">Proyek 项目</a>
+      <a href="#smart">Smart 智慧消防</a>
       <a href="#kontak">Kontak 联系</a>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-label="Buka menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -398,14 +468,34 @@ h2.title .cn{display:block;font-size:.6em;color:var(--mut);font-weight:600;margi
         <li><span class="qicon">ID</span><div><b>Beroperasi di Indonesia sejak 2025</b><span>Entitas lokal PT, alamat kantor di PIK 2, Tangerang</span></div></li>
         <li><span class="qicon">98</span><div><b>Grup berdiri sejak 1998</b><span>Pengalaman panjang instalasi proteksi kebakaran</span></div></li>
         <li><span class="qicon">ISO</span><div><b>ISO 9001 / 14001 / 45001（Grup）</b><span>Sistem manajemen mutu, lingkungan &amp; K3 — 集团持有</span></div></li>
+        <li><span class="qicon">22</span><div><b>22 kantor cabang · 11 divisi proyek（Grup）</b><span>Jaringan layanan domestik Grup — 集团国内服务网络</span></div></li>
         <li><span class="qicon">2GW</span><div><b>Pengalaman proyek EBT 2GW</b><span>Proyek wafer monokristal di Indonesia (2025)</span></div></li>
       </ul>
     </div>
   </div>
 </section>
 
+<!-- 2.5 发展历程 -->
+<section id="perjalanan" style="background:var(--warm)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">PERJALANAN GRUP</span>
+      <h2 class="title">Perjalanan 27 Tahun Rongda<span class="cn">集团发展历程</span></h2>
+    </div>
+    <ol class="timeline reveal">
+      <li><span class="year">1998</span><p>消防器材销售与维修起步 —— 集团事业的起点。Awal usaha: penjualan &amp; servis peralatan pemadam kebakaran.</p></li>
+      <li><span class="year">2010</span><p>江西荣达安装工程有限公司成立，正式进入消防工程安装领域。</p></li>
+      <li><span class="year">2016</span><p>营业额突破 1.6 亿元。</p></li>
+      <li><span class="year">2018</span><p>成立消防技术服务公司，业务延伸至检测、维保与技术服务。</p></li>
+      <li><span class="year">2020</span><p>营业额突破 4 亿元。</p></li>
+      <li><span class="year">2022</span><p>成立消防培训学校 · 荣达商学院，保障施工队伍专业化。</p></li>
+      <li class="hl"><span class="year">2025 ★</span><p>成立印尼国际公司（PT Rongda Internasional）—— 集团出海第一站，即本网站主体。</p></li>
+    </ol>
+  </div>
+</section>
+
 <!-- 3 Layanan -->
-<section id="layanan" style="background:var(--warm)">
+<section id="layanan" style="background:#fff">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="kicker">LAYANAN KAMI</span>
@@ -419,6 +509,24 @@ h2.title .cn{display:block;font-size:.6em;color:var(--mut);font-weight:600;margi
       <div class="svc reveal"><div class="num">04</div><h3>Sprinkler Otomatis &amp; Hidran<span class="cn">自动喷淋与消火栓系统</span></h3><p>Pipa sprinkler, pompa, hidran indoor / outdoor, termasuk uji tekanan.</p></div>
       <div class="svc reveal"><div class="num">05</div><h3>Gas Pemadam &amp; Exhaust Asap<span class="cn">气体灭火与防排烟</span></h3><p>Sistem gas pemadam untuk cleanroom &amp; area kritis; pressurization dan exhaust asap.</p></div>
       <div class="svc reveal"><div class="num">06</div><h3>Suplai Peralatan &amp; Dokumentasi<span class="cn">设备供应与调试验收资料</span></h3><p>APAR, fire alarm panel, pompa kebakaran, dan material — satu paket dengan pemasangan, catatan uji fungsi, as-built drawing, dan serah terima.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3.5 服务流程 -->
+<section id="proses" style="background:var(--warm)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">PROSES KERJA</span>
+      <h2 class="title">Alur Kerja Sama<span class="cn">服务流程：从勘查到交付文档</span></h2>
+      <p class="lead">Lima tahap terstandarisasi — setiap tahap memiliki penanggung jawab dan keluaran yang jelas. 五个标准化阶段，每阶段责任人与交付物明确，进度可追踪。</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><span class="sn">01</span><b>Konsultasi &amp; Survei</b><span class="cn">需求沟通与现场勘查</span><p>了解建筑与产线现状，明确安装或整改范围，现场记录并评估。</p></div>
+      <div class="step reveal"><span class="sn">02</span><b>Desain Teknis &amp; Penawaran</b><span class="cn">技术方案与报价</span><p>输出技术方案、材料清单与报价单，确认节点工期。</p></div>
+      <div class="step reveal"><span class="sn">03</span><b>Instalasi</b><span class="cn">施工安装</span><p>标准化施工与过程管控，关键节点留存影像与测试记录。</p></div>
+      <div class="step reveal"><span class="sn">04</span><b>Uji Fungsi &amp; Commissioning</b><span class="cn">调试验收</span><p>联动测试、压力测试与功能验收，问题闭环整改。</p></div>
+      <div class="step reveal"><span class="sn">05</span><b>Serah Terima &amp; Garansi</b><span class="cn">交付与质保</span><p>竣工图、测试记录、操作培训与质保期响应。</p></div>
     </div>
   </div>
 </section>
@@ -447,17 +555,17 @@ h2.title .cn{display:block;font-size:.6em;color:var(--mut);font-weight:600;margi
   </div>
 </section>
 
-<!-- 5 Studi Kasus -->
-<section id="kasus">
+<!-- 5 Proyek 项目业绩 -->
+<section id="proyek">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="kicker">STUDI KASUS</span>
-      <h2 class="title">Proyek yang Telah Dikerjakan<span class="cn">代表案例 · 在印尼交付的第一个项目</span></h2>
+      <span class="kicker">PORTOFOLIO PROYEK</span>
+      <h2 class="title">Proyek yang Telah Dikerjakan<span class="cn">项目业绩：印尼落地项目 + 集团国内代表项目</span></h2>
     </div>
     <div class="case reveal">
       <div class="imgbox"><img src="media/case-2gw.jpg" alt="Proyek wafer monokristal 2GW Indonesia — 印尼2GW单晶拉棒及切片基地"></div>
       <div class="txt">
-        <h3>Proyek Wafer Monokristal 2GW<span class="id">印尼 2GW 单晶拉棒及切片基地</span></h3>
+        <h3>Proyek Wafer Monokristal 2GW<span class="id">印尼 2GW 单晶拉棒及切片基地 · 在印尼交付的第一个项目</span></h3>
         <div class="tags">
           <span>Lokasi: Indonesia</span>
           <span>Lingkup: Fire Protection + MEP</span>
@@ -468,21 +576,63 @@ h2.title .cn{display:block;font-size:.6em;color:var(--mut);font-weight:600;margi
         <a class="casecta" href="brochure.html">Lihat brosur lengkap 查看完整宣传册 →</a>
       </div>
     </div>
+    <div class="pgrid">
+      <div class="pj reveal">
+        <div class="pt"><span>集团国内业绩</span><small>Hunan, China</small></div>
+        <b>Proyek PLTG Hengdong<span class="id">湘投国际衡东燃气发电项目</span></b>
+        <p>集团负责该燃气发电 EPC 项目的消防工程。</p>
+        <div class="scope">Lingkup: 消防工程 · 总投资 24.8 亿元</div>
+      </div>
+      <div class="pj reveal">
+        <div class="pt"><span>集团国内业绩</span><small>Fengcheng, Jiangxi</small></div>
+        <b>Cleanroom SMT Fengcheng<span class="id">丰城电子信息产业园 SMT 洁净车间</span></b>
+        <p>极早期烟雾探测 + 气体灭火系统，服务电子信息园标准厂房。</p>
+        <div class="scope">Lingkup: 极早期探测 · 气体灭火</div>
+      </div>
+      <div class="pj reveal">
+        <div class="pt"><span>集团国内业绩</span><small>Jinxian, Jiangxi</small></div>
+        <b>Kawasan Pabrik Standar Jinxian — Blok D<span class="id">进贤产业园标准厂房 D 区</span></b>
+        <p>火灾报警、喷淋、消火栓及园区市政消防管网。</p>
+        <div class="scope">Lingkup: 报警 · 喷淋 · 消火栓 · 市政管网</div>
+      </div>
+      <div class="pj reveal">
+        <div class="pt"><span>集团国内业绩</span><small>Nanchang, Jiangxi</small></div>
+        <b>Terowongan Utilitas Luoyangdonglu<span class="id">洛阳东路综合管廊 · 江西首座四舱综合管廊</span></b>
+        <p>全长 3643 米，投资约 20 亿元，配套消防与机电安装。</p>
+        <div class="scope">Lingkup: 消防 + 机电安装 · 3643 m</div>
+      </div>
+      <div class="pj reveal">
+        <div class="pt"><span>集团国内业绩</span><small>Shantou, Guangdong · 2024.11</small></div>
+        <b>Pangkalan Uji Turbin Angin Laut Shantou<span class="id">汕头风电临海试验基地</span></b>
+        <p>承接服务海上风电检测平台，临海环境的消防与机电工程实践。</p>
+        <div class="scope">Lingkup: 消防与机电工程 · 临海环境</div>
+      </div>
+    </div>
+    <p class="proj-note reveal">Catatan: proyek di China adalah rekam jejak Grup Rongda di pasar domestik（集团国内业绩），用于说明集团工程能力；印尼本地业务以实际承接范围为准。</p>
   </div>
 </section>
 
-<!-- 6 Kemampuan -->
-<section id="kemampuan" style="background:var(--warm)">
+<!-- 6 Smart Fire 智慧消防 -->
+<section id="smart">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="kicker">KEMAMPUAN</span>
-      <h2 class="title">Tiga Poin yang Dapat Diverifikasi<span class="cn">三个可验证的能力点</span></h2>
+      <span class="kicker">SMART FIRE PROTECTION</span>
+      <h2 class="title">Smart Fire Protection ala Rongda<span class="cn">智慧消防 · 集团数字化服务能力</span></h2>
+      <p class="lead">与浙江大华战略合作，建设南昌、丰城、赣州、深圳四地智慧消防运营中心；依托 22 家分公司、300 余名工程师，形成 30 分钟响应、5 公里覆盖的消防安全托管网络。该能力正随集团出海逐步引入印尼市场。</p>
     </div>
-    <div class="cap">
-      <div class="capc reveal"><b>Pengalaman Proyek EBT 2GW di Indonesia</b><p>Pekerjaan fire protection &amp; MEP untuk cleanroom, gudang bahan kimia, dan ruang pembangkit daya pada proyek wafer monokristal 2GW — penerapan pertama Grup Rongda di pasar Indonesia.</p><p class="src">依据：集团印尼项目记录（2025）</p></div>
-      <div class="capc reveal"><b>Sumber Daya Konstruksi Grup</b><p>750 tim konstruksi profesional, 300+ insinyur, dan 22 kantor cabang di Grup Rongda yang mendukung operasional proyek.</p><p class="src">依据：集团宣传册与公开资料</p></div>
-      <div class="capc reveal"><b>Sistem Manajemen ISO（Grup）</b><p>Sertifikasi ISO 9001 (mutu), ISO 14001 (lingkungan), dan ISO 45001 (K3) — sistem telah berjalan bertahun-tahun di Grup.</p><p class="src">依据：GB/T 19001 / 24001 / 45001</p></div>
+    <div class="smartgrid">
+      <div class="smart-nums reveal">
+        <div><b>4</b><span>运营中心 · 南昌 / 丰城 / 赣州 / 深圳</span></div>
+        <div><b>22</b><span>分公司</span></div>
+        <div><b>300+</b><span>工程师</span></div>
+        <div><b>30 分钟</b><span>响应 · 5 公里覆盖</span></div>
+      </div>
+      <ul class="smart-proj reveal">
+        <li><small>2024.10 中标 · 集团国内业绩</small><b>中国电信江西智慧消防平台</b><p>物联网数据采集 + 视频监控 + 四防一体，覆盖多类场所的智慧消防管理。</p></li>
+        <li><small>2025.2 · 集团国内业绩</small><b>赣州市市直学校平台</b><p>携手大华建设，覆盖多所中学，实现校园消防集中监测与预警。</p></li>
+      </ul>
     </div>
+    <p class="smart-note reveal">注：智慧消防项目均为集团国内业绩；印尼本地业务以实际承接范围为准。Kemampuan smart fire Grup bertahap diperkenalkan ke Indonesia.</p>
   </div>
 </section>
 
