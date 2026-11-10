@@ -283,6 +283,38 @@ h2.title .cn{display:block;font-size:.6em;color:var(--mut);font-weight:600;margi
   background:var(--warm);border:1px dashed var(--line);border-radius:10px;padding:12px 16px;
 }
 
+/* ---------- 项目分组小标题 & 印尼项目详情卡 ---------- */
+.subhead{
+  font-size:clamp(17px,2.2vw,21px);font-weight:800;margin:clamp(30px,4vw,44px) 0 20px;
+  display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;
+}
+.subhead:first-of-type{margin-top:0}
+.subhead .en{font-size:.62em;letter-spacing:2.5px;color:var(--mut);font-weight:700}
+.pj2{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(22px,3.5vw,40px);
+  background:var(--card);border:1px solid var(--line);border-left:5px solid var(--primary);
+  border-radius:14px;padding:clamp(22px,3vw,34px);margin-top:18px;
+  transition:box-shadow .2s ease;
+}
+.pj2:hover{box-shadow:0 10px 26px rgba(110,15,15,.09)}
+@media (max-width:820px){.pj2{grid-template-columns:1fr}}
+.pj2 .pt{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}
+.pj2 .pt span{
+  font-size:11px;color:#fff;background:var(--primary);
+  border-radius:999px;padding:2px 12px;white-space:nowrap;
+}
+.pj2 .pt small{font-size:11.5px;color:var(--mut);white-space:nowrap}
+.pj2 h3{font-size:clamp(17px,2vw,20px);line-height:1.4}
+.pj2 h3 .id{display:block;font-size:.74em;color:var(--mut);font-weight:600;margin-top:4px}
+.pj2 .desc{font-size:13.5px;color:var(--body);margin-top:12px}
+.pj2 .facts{list-style:none;display:grid;gap:10px}
+.pj2 .facts li{
+  display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+  background:var(--warm);border:1px solid var(--line);border-radius:10px;padding:10px 14px;
+}
+.pj2 .facts li b{color:var(--deep);font-size:12.5px;white-space:nowrap;flex:0 0 auto}
+.pj2 .facts li span{color:var(--body);font-size:12.5px;text-align:left}
+
 /* ---------- 智慧消防 ---------- */
 #smart{background:linear-gradient(150deg,#570C0C,var(--deep) 62%,var(--darkred));color:#fff}
 #smart .kicker{color:var(--pink);border-color:rgba(255,217,208,.4)}
@@ -560,8 +592,9 @@ h2.title .cn{display:block;font-size:.6em;color:var(--mut);font-weight:600;margi
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="kicker">PORTOFOLIO PROYEK</span>
-      <h2 class="title">Proyek yang Telah Dikerjakan<span class="cn">项目业绩：印尼落地项目 + 集团国内代表项目</span></h2>
+      <h2 class="title">Proyek yang Telah Dikerjakan<span class="cn">项目业绩：印尼业绩 + 集团国内代表项目</span></h2>
     </div>
+    <h3 class="subhead reveal">Proyek Indonesia<span class="en">印尼业绩</span></h3>
     <div class="case reveal">
       <div class="imgbox"><img src="media/case-2gw.jpg" alt="Proyek wafer monokristal 2GW Indonesia — 印尼2GW单晶拉棒及切片基地"></div>
       <div class="txt">
@@ -576,6 +609,20 @@ h2.title .cn{display:block;font-size:.6em;color:var(--mut);font-weight:600;margi
         <a class="casecta" href="brochure.html">Lihat brosur lengkap 查看完整宣传册 →</a>
       </div>
     </div>
+    <div class="pj2 reveal">
+      <div>
+        <div class="pt"><span>印尼业绩</span><small>Karawang, Jawa Barat · 2025</small></div>
+        <h3>Pabrik Pemotongan Wafer Haojuxing<span class="id">海钜星单晶切片厂房 · 卡拉旺园区（西爪哇）</span></h3>
+        <p class="desc">Pabrik pemotongan wafer monokristal 2GW（单晶 + 切片）di kawasan industri Karawang — 总建筑面积 30,139 ㎡：1 栋主厂房（27,172 ㎡，层高 21.8 m）+ 7 栋配套设施（含 20kV 开关站、危化品库、氩气回收站、消防水泵房等）。项目建成后将成为东南亚首个 GW 级单晶切片基地，填补印尼光伏产业链上游空白。</p>
+      </div>
+      <ul class="facts">
+        <li><b>施工范围</b><span>消防水系统 · 消防电系统 · 循环水池防水 · 室外强弱电管网</span></li>
+        <li><b>单体构成</b><span>主厂房 1 栋（27,172 ㎡ · 层高 21.8 m）+ 配套设施 7 栋</span></li>
+        <li><b>总建筑面积</b><span>30,139 ㎡</span></li>
+        <li><b>车间配置</b><span>2GW 单晶 + 2GW 切片车间</span></li>
+      </ul>
+    </div>
+    <h3 class="subhead reveal">Rekam Jejak Grup di China<span class="en">集团国内代表项目</span></h3>
     <div class="pgrid">
       <div class="pj reveal">
         <div class="pt"><span>集团国内业绩</span><small>Hunan, China</small></div>
