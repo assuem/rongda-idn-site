@@ -469,7 +469,19 @@ h2.title .cn{display:block;font-size:.6em;color:var(--mut);font-weight:600;margi
         "addressRegion": "Banten",
         "postalCode": "15213",
         "addressCountry": "ID"
-      }
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "telephone": "+62-858-3788-2222",
+          "url": "https://wa.me/6285837882222",
+          "availableLanguage": [
+            "Indonesian",
+            "Chinese"
+          ]
+        }
+      ]
     },
     {
       "@type": [
@@ -478,20 +490,12 @@ h2.title .cn{display:block;font-size:.6em;color:var(--mut);font-weight:600;margi
       ],
       "@id": "https://idn.jxrdxf.top/#localbusiness",
       "name": "PT Rongda Internasional Instalasi dan Konstruksi",
-      "alternateName": "荣达印尼",
+      "parentOrganization": {
+        "@id": "https://idn.jxrdxf.top/#organization"
+      },
       "url": "https://idn.jxrdxf.top/",
-      "telephone": "+62-858-3788-2222",
-      "email": "xin1@jxrdxf.top",
       "priceRange": "$$",
       "description": "Perusahaan instalasi MEP (mekanikal, elektrikal, plumbing) dan rectifikasi proteksi kebakaran pabrik di Jabodetabek, Indonesia. 机电安装（MEP）与厂房机电消防整改工程公司，服务印尼雅加达都市圈。",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Ruko Osaka Shopping Arcade, Blok A No.6 PIK 2, Kosambi",
-        "addressLocality": "Kab. Tangerang",
-        "addressRegion": "Banten",
-        "postalCode": "15213",
-        "addressCountry": "ID"
-      },
       "areaServed": [
         {
           "@type": "Place",
@@ -531,9 +535,6 @@ h2.title .cn{display:block;font-size:.6em;color:var(--mut);font-weight:600;margi
         ],
         "opens": "00:00",
         "closes": "23:59"
-      },
-      "parentOrganization": {
-        "@id": "https://idn.jxrdxf.top/#organization"
       }
     },
     {
@@ -624,6 +625,96 @@ h2.title .cn{display:block;font-size:.6em;color:var(--mut);font-weight:600;margi
           }
         }
       ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://idn.jxrdxf.top/id/instalasi-mep.html#service",
+      "name": "Instalasi MEP Pabrik",
+      "serviceType": "MEP Installation",
+      "provider": {
+        "@id": "https://idn.jxrdxf.top/#organization"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Jabodetabek"
+      },
+      "url": "https://idn.jxrdxf.top/id/instalasi-mep.html",
+      "description": "Instalasi mekanikal, elektrikal, plumbing dan utilitas untuk gedung pabrik & industri — dari pemasangan sampai uji fungsi."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://idn.jxrdxf.top/id/renovasi-proteksi-kebakaran.html#service",
+      "name": "Renovasi Sistem Proteksi Kebakaran Pabrik",
+      "serviceType": "Fire Protection Renovation",
+      "provider": {
+        "@id": "https://idn.jxrdxf.top/#organization"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Jabodetabek"
+      },
+      "url": "https://idn.jxrdxf.top/id/renovasi-proteksi-kebakaran.html",
+      "description": "Audit & rectifikasi sistem deteksi, alarm, sprinkler, dan hidran untuk pabrik yang sudah beroperasi."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://idn.jxrdxf.top/id/sistem-deteksi-alarm-kebakaran.html#service",
+      "name": "Sistem Deteksi & Alarm Kebakaran",
+      "serviceType": "Fire Detection & Alarm System",
+      "provider": {
+        "@id": "https://idn.jxrdxf.top/#organization"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Jabodetabek"
+      },
+      "url": "https://idn.jxrdxf.top/id/sistem-deteksi-alarm-kebakaran.html",
+      "description": "Instalasi smoke/heat detector, fire alarm panel, programming sistem serta uji fungsi."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://idn.jxrdxf.top/id/sprinkler-hidran.html#service",
+      "name": "Sprinkler Otomatis & Sistem Hidran",
+      "serviceType": "Automatic Sprinkler & Hydrant",
+      "provider": {
+        "@id": "https://idn.jxrdxf.top/#organization"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Jabodetabek"
+      },
+      "url": "https://idn.jxrdxf.top/id/sprinkler-hidran.html",
+      "description": "Pipa sprinkler, pompa kebakaran, hidran indoor/outdoor, termasuk uji tekanan."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://idn.jxrdxf.top/id/gas-pemadam-exhaust-asap.html#service",
+      "name": "Gas Pemadam & Sistem Exhaust Asap",
+      "serviceType": "Gas Suppression & Smoke Exhaust",
+      "provider": {
+        "@id": "https://idn.jxrdxf.top/#organization"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Jabodetabek"
+      },
+      "url": "https://idn.jxrdxf.top/id/gas-pemadam-exhaust-asap.html",
+      "description": "Sistem gas pemadam untuk cleanroom & area kritis; pressurization dan exhaust asap."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://idn.jxrdxf.top/id/suplai-peralatan-dokumentasi.html#service",
+      "name": "Suplai Peralatan & Dokumentasi Serah Terima",
+      "serviceType": "Equipment Supply & Documentation",
+      "provider": {
+        "@id": "https://idn.jxrdxf.top/#organization"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Jabodetabek"
+      },
+      "url": "https://idn.jxrdxf.top/id/suplai-peralatan-dokumentasi.html",
+      "description": "APAR, fire alarm panel, pompa kebakaran & material — satu paket dengan pemasangan, catatan uji, as-built drawing."
     }
   ]
 }
@@ -1024,7 +1115,7 @@ document.addEventListener('DOMContentLoaded', function () {
     </details>
     <details class="faq-item">
       <summary><span class="fq">6. Proyek apa saja yang sudah perusahaan kerjakan di Indonesia?<span class="bi">在印尼做过哪些项目？</span></span><span class="fx">+</span></summary>
-      <div class="fa"><p>Lebih dari 10 proyek, antara lain: pabrik wafer 2GW Haojuxing (Karawang, 30.139 m²), pabrik cerdas Everpro, office & workshop Leeco, serta rectifikasi pabrik elektronik, data center SEC, dan proyek Sailun, Changfei, Prima.</p><p class="bi">10 余个项目：海钜星 2GW 电池片厂房（加拉璜，30,139㎡）、长芯盛 Everpro 智能制造基地、乐科 Leeco 厂房办公室，及电子厂房整改、SEC 数据中心、赛轮 Sailun、长飞等项目。</p></div>
+      <div class="fa"><p>Lebih dari 10 proyek, antara lain: pabrik wafer 2GW Haojuxing (Karawang, 30.139 m²), pabrik cerdas Everpro, office & workshop Leeco, serta rectifikasi pabrik elektronik, data center SEC, dan proyek Sailun, Changfei, Prima.</p><p class="bi">10 余个项目：海钜星 2GW 单晶硅片厂房（加拉璜，30,139㎡）、长芯盛 Everpro 智能制造基地、乐科 Leeco 厂房办公室，及电子厂房整改、SEC 数据中心、赛轮 Sailun、长飞等项目。</p></div>
     </details>
     <details class="faq-item">
       <summary><span class="fq">7. Apa kelebihan perusahaan dibanding kontraktor lokal?<span class="bi">与本地承包商相比优势是什么？</span></span><span class="fx">+</span></summary>
