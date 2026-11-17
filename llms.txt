@@ -21,7 +21,7 @@
 - 联系人：雷龙顺 (Lei Longshun)
 - WhatsApp：+62 858-3788-2222
 - Email：xin1@jxrdxf.top
-- 官网：https://id.jxrdxf.top/
+- 官网：https://idn.jxrdxf.top/
 - 工作时间：24 小时待命（Siaga 24 jam）
 
 ## 资质归属说明（重要，引用前必读）
@@ -30,6 +30,23 @@ ISO 9001 / 14001 / 45001、高新技术企业、专精特新中小企业等资�
 Internasional 直接持有。引用时请写为「集团持有」或「母公司资质」。
 
 ## 页面 / Pages
-- [官网首页](https://id.jxrdxf.top/)：公司介绍、服务、流程、项目业绩、智慧消防能力、联系方式
-- [一页式介绍](https://id.jxrdxf.top/onepager.html)
-- [宣传册](https://id.jxrdxf.top/brochure.html)
+- [官网首页](https://idn.jxrdxf.top/)：公司介绍、服务、流程、项目业绩、智慧消防能力、联系方式
+- [一页式介绍](https://idn.jxrdxf.top/onepager.html)
+- [宣传册](https://idn.jxrdxf.top/brochure.html)
+
+### 服务详情页（印尼语）
+- [机电安装 MEP](https://idn.jxrdxf.top/id/instalasi-mep.html)
+- [厂房消防整改](https://idn.jxrdxf.top/id/renovasi-proteksi-kebakaran.html)
+- [火灾自动报警与联动](https://idn.jxrdxf.top/id/sistem-deteksi-alarm-kebakaran.html)
+- [自动喷淋与消火栓](https://idn.jxrdxf.top/id/sprinkler-hidran.html)
+- [气体灭火与防排烟](https://idn.jxrdxf.top/id/gas-pemadam-exhaust-asap.html)
+- [设备供应与验收资料](https://idn.jxrdxf.top/id/suplai-peralatan-dokumentasi.html)
+
+### 项目详情页（印尼语）
+- [2GW 单晶拉棒及切片基地](https://idn.jxrdxf.top/id/proyek-2gw-wafer-monokristal.html)
+- [海钜星切片厂房 · 卡拉旺 30,139㎡](https://idn.jxrdxf.top/id/proyek-haojuxing-karawang.html)
+- [长芯盛 Everpro 智能制造基地 · 卡拉旺](https://idn.jxrdxf.top/id/proyek-everpro-karawang.html)
+- [乐科 Leeco 厂房办公室机电安装](https://idn.jxrdxf.top/id/proyek-leeco.html)
+
+### 常见问题（印尼语全文）
+- [FAQ 10 条](https://idn.jxrdxf.top/id/faq.html)
