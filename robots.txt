@@ -30,4 +30,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://www.jxrdxf.top/sitemap.xml
+Sitemap: https://id.jxrdxf.top/sitemap.xml
